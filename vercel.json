@@ -7,6 +7,10 @@
   ],
   "rewrites": [
     {
+      "source": "/api/ping",
+      "destination": "/api/ping"
+    },
+    {
       "source": "/api/(.*)",
       "destination": "https://moimo-back.vercel.app/api/$1"
     },

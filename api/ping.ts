@@ -14,7 +14,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const { error } = await supabase.rpc("ping");
 
   if (error) {
-    return res.status(500).json({ error });
+    console.error("Ping error:", error);
+    return res.status(500).json({ message: "Internal server error" });
   }
 
   return res.status(200).json({ ok: true });
